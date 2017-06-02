@@ -8,6 +8,22 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+ascii-tree@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/ascii-tree/-/ascii-tree-0.3.0.tgz#a2fe469607c0a8541bd71c93e9b57f80dad546dc"
+  dependencies:
+    freetree "0.2.2"
+
+cli-table@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/cli-table/-/cli-table-0.3.1.tgz#f53b05266a8b1a0b934b3d0821e6e2dc5914ae23"
+  dependencies:
+    colors "1.0.3"
+
+colors@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-1.0.3.tgz#0433f44d809680fdeb60ed260f1b0c262e82a40b"
+
 colors@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
@@ -21,6 +37,10 @@ commander@^2.9.0:
 esprima@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
+
+freetree@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/freetree/-/freetree-0.2.2.tgz#0e2008598b52d07cc9636df7f49f5250c4f92fd0"
 
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"

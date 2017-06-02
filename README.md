@@ -39,21 +39,21 @@ $ svgi icon.svg
 ```
 
 ```
-{ file:
-   { name: 'icon.svg',
-     path: '/Users/angel/Projects/svgi/icon.svg',
-     size: 170 },
-  totalNodes: 1,
-  nodes:
-   { type: 'svg',
-     properties:
-      { viewBox: '0 0 16 16',
-        xmlns: 'http://www.w3.org/2000/svg',
-        'fill-rule': 'evenodd',
-        'clip-rule': 'evenodd',
-        'stroke-linejoin': 'round',
-        'stroke-miterlimit': '1.414' },
-     children: [ [Object] ] } }
+Basic information
+┌──────┬─────────────────────────────────────┐
+│ Name │ icon.svg                            │
+├──────┼─────────────────────────────────────┤
+│ Path │ /Users/angel/Projects/svgi/icon.svg │
+├──────┼─────────────────────────────────────┤
+│ Size │ 170                                 │
+└──────┴─────────────────────────────────────┘
+Node statistics
+┌─────────────┬───┐
+│ Total Nodes │ 2 │
+└─────────────┴───┘
+Node tree
+svg
+└─ path
 ```
 
 ## JSON
