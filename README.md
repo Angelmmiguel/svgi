@@ -16,7 +16,7 @@ Then, `svgi` will be available in your path:
 
 
 ```
-$ svgi --help
+svgi --help
 
   Usage: svgi [options] <file>
 
@@ -35,7 +35,7 @@ You can change the output format with the `-o` option.
 This is the default option. Also, **we're working on this format**.
 
 ```bash
-$ svgi icon.svg
+svgi icon.svg
 ```
 
 ```
@@ -59,7 +59,7 @@ svg
 ## JSON
 
 ```bash
-$ svgi -o json icon.svg
+svgi -o json icon.svg
 ```
 
 ```json
@@ -98,7 +98,7 @@ $ svgi -o json icon.svg
 You can use the well known [jq](https://stedolan.github.io/jq/) command-line JSON processor to read and filter the output of the JSON formatter:
 
 ```bash
-$ svgi -o json icon.svg | jq '.nodes.properties'
+svgi -o json icon.svg | jq '.nodes.properties'
 ```
 
 ```json
@@ -115,7 +115,7 @@ $ svgi -o json icon.svg | jq '.nodes.properties'
 ## YAML
 
 ```bash
-$ svgi -o yaml icon.svg
+svgi -o yaml icon.svg
 ```
 
 ```yaml
