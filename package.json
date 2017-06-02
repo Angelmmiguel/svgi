@@ -1,6 +1,6 @@
 {
   "name": "svgi",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "An SVG inspector tool",
   "main": "index.js",
   "bin": {
@@ -15,10 +15,8 @@
   },
   "keywords": [
     "svg",
-    "svg",
-    "inspector",
-    "svg",
-    "paths",
+    "svg inspector",
+    "svg paths",
     "paths"
   ],
   "author": "Angel M Miguel <angel@laux.es>",
