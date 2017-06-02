@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# SVG test files
+*.svg
+
+# My VSCode config
+.vscode
