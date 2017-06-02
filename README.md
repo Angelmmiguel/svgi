@@ -34,7 +34,7 @@ You can change the output format with the `-o` option.
 
 This is the default option. Also, **we're working on this format**.
 
-```
+```bash
 $ svgi icon.svg
 ```
 
@@ -58,7 +58,7 @@ svg
 
 ## JSON
 
-```
+```bash
 $ svgi -o json icon.svg
 ```
 
@@ -93,9 +93,28 @@ $ svgi -o json icon.svg
 }
 ```
 
+### Combine JSON output with jq
+
+You can use the well known [jq](https://stedolan.github.io/jq/) command-line JSON processor to read and filter the output of the JSON formatter:
+
+```bash
+$ svgi -o json icon.svg | jq '.nodes.properties'
+```
+
+```json
+{
+  "viewBox": "0 0 16 16",
+  "xmlns": "http://www.w3.org/2000/svg",
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  "stroke-linejoin": "round",
+  "stroke-miterlimit": "1.414"
+}
+```
+
 ## YAML
 
-```
+```bash
 $ svgi -o yaml icon.svg
 ```
 
