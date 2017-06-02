@@ -69,7 +69,7 @@ $ svgi -o json icon.svg
     "path": "/Users/angel/projects/svgi/icon.svg",
     "size": 170
   },
-  "totalNodes": 1,
+  "totalNodes": 2,
   "nodes": {
     "type": "svg",
     "properties": {
@@ -104,7 +104,7 @@ file:
   name: icon.svg
   path: /Users/angel/Projects/svgi/icon.svg
   size: 170
-totalNodes: 1
+totalNodes: 2
 nodes:
   type: svg
   properties:
