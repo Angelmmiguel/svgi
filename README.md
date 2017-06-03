@@ -23,7 +23,10 @@ svgi --help
   Options:
 
     -h, --help                output usage information
-    -o, --output <formatter>  Select the format of the output: json, yaml, or human
+    -o, --output <formatter>  Select the format of the output: json, yaml, or human (default)
+    -t, --tree                Display only the node tree
+    -b, --basic               Display only the basic information
+    -s, --stats               Display only the node statistics
 ```
 
 # Formatters
@@ -166,6 +169,22 @@ nodes:
       children: []
 ```
 
+### Limit the output
+
+The params `-b, --basic`, `-s, --stats` and `-t, --tree` allow you to limit the output of the command:
+
+```bash
+svgi --stats -o json icon.svg
+```
+
+```json
+{
+  "stats": {
+    "totalNodes": 14
+  }
+}
+```
+
 # License
 
-`svgi` is released under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0).  Copyright [@Laux_es ;)](https://twitter.com/laux_es).
+`svgi` is released under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0). Developed by [@Laux_es ;)](https://twitter.com/laux_es).

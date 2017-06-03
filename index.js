@@ -25,13 +25,13 @@ const app = (filePath, options) => {
 
       switch(options.output) {
         case 'json':
-          output = JSONFormatter(svg);
+          output = JSONFormatter(svg, options);
           break;
         case 'yaml':
-          output = YAMLFormatter(svg);
+          output = YAMLFormatter(svg, options);
           break;
         default:
-          output = humanFormatter(svg);
+          output = humanFormatter(svg, options);
       }
 
       // Display the output
@@ -42,8 +42,11 @@ const app = (filePath, options) => {
 
 // Parse options and run the CLI
 commander
-  .option('-o, --output <formatter>', 'Select the format of the output: json, yaml, or human',
+  .option('-o, --output <formatter>', 'Select the format of the output: json, yaml, or human (default)',
           /^(json|yaml|human)$/i, 'human')
+  .option('-t, --tree', 'Display only the node tree')
+  .option('-b, --basic', 'Display only the basic information')
+  .option('-s, --stats', 'Display only the node statistics')
   .arguments('<file>')
   .action(app)
   .parse(process.argv);
