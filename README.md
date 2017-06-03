@@ -169,7 +169,7 @@ nodes:
       children: []
 ```
 
-### Limit the output
+## Limit the output
 
 The params `-b, --basic`, `-s, --stats` and `-t, --tree` allow you to limit the output of the command:
 
