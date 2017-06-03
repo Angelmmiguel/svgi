@@ -45,18 +45,40 @@ Basic information
 ├──────┼─────────────────────────────────────┤
 │ Path │ /Users/angel/Projects/svgi/icon.svg │
 ├──────┼─────────────────────────────────────┤
-│ Size │ 170                                 │
+│ Size │ 204                                 │
 └──────┴─────────────────────────────────────┘
 
 Node statistics
-┌─────────────┬───┐
-│ Total Nodes │ 2 │
-└─────────────┴───┘
+┌─────────────┬────┐
+│ Total Nodes │ 14 │
+└─────────────┴────┘
 
 Node tree
 svg
-└─ path
+├─ g
+│  └─ g
+│     └─ g
+│        ├─ rect
+│        ├─ rect
+│        └─ g
+│           ├─ rect
+│           ├─ path
+│           ├─ path
+│           ├─ path
+│           └─ path
+├─ text
+└─ text
+
+┌────────┬───────────┬────────┬──────────────┬─────────────┬───────────────┬──────┐
+│ Legend │ animation │ shapes │ containers   │ descriptive │ filters       │ font │
+├────────┼───────────┼────────┼──────────────┼─────────────┼───────────────┼──────┤
+│        │ html      │ lights │ paint-server │ text        │ uncategorized │
+└────────┴───────────┴────────┴──────────────┴─────────────┴───────────────┴──────┘
 ```
+
+Just to mention, the output is prettier than this bored block code ;).
+
+![Human output](https://cloud.githubusercontent.com/assets/4056725/26752773/c0726fac-4857-11e7-8af6-8913faa9e779.png)
 
 ## JSON
 
