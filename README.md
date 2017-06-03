@@ -78,7 +78,7 @@ svg
 
 Just to mention, the output is prettier than this bored block code ;).
 
-![Human output](https://cloud.githubusercontent.com/assets/4056725/26752773/c0726fac-4857-11e7-8af6-8913faa9e779.png)
+<img width="600" alt="Human output" src="https://cloud.githubusercontent.com/assets/4056725/26752798/4eb0d178-4858-11e7-8c9c-be691c5ffbc0.png">
 
 ## JSON
 
