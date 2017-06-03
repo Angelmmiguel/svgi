@@ -71,12 +71,6 @@ svg
 │           └─ path
 ├─ text
 └─ text
-
-┌────────┬───────────┬────────┬──────────────┬─────────────┬───────────────┬──────┐
-│ Legend │ animation │ shapes │ containers   │ descriptive │ filters       │ font │
-├────────┼───────────┼────────┼──────────────┼─────────────┼───────────────┼──────┤
-│        │ html      │ lights │ paint-server │ text        │ uncategorized │
-└────────┴───────────┴────────┴──────────────┴─────────────┴───────────────┴──────┘
 ```
 
 Just to mention, the output is prettier than this bored block code ;).
