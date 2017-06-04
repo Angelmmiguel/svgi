@@ -15,7 +15,7 @@ npm install -g svgi
 Then, `svgi` will be available in your path:
 
 
-```
+```sh
 svgi --help
 
   Usage: svgi [options] <file>
@@ -28,7 +28,8 @@ svgi --help
     -b, --basic               Display only the basic information
     -s, --stats               Display only the node statistics
     --all-stats               Return types and categories with 0 ocurrences in the stats object
-    --ids                     Show the IDs of the elements in the tree view. Only available for human formatter
+    --ids                     Show the IDs of the nodes in the tree view. Only available for human formatter
+    --props                   Show the properties of the nodes in the tree view. Only available for human formatter
     --legend                  Show the tree color legend. Only available for human formatter
 ```
 
