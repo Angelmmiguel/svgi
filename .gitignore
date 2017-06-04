@@ -68,3 +68,4 @@ typings/
 
 # Site build
 site/build
+site/.publish

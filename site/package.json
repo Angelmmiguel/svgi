@@ -7,6 +7,7 @@
     "start": "gulp",
     "build": "gulp build",
     "server": "http-server ./build",
+    "publish": "gulp publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Angel M Miguel <angel@laux.es>",
