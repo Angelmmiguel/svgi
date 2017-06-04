@@ -27,6 +27,9 @@ svgi --help
     -t, --tree                Display only the node tree
     -b, --basic               Display only the basic information
     -s, --stats               Display only the node statistics
+    --all-stats               Return types and categories with 0 ocurrences in the stats object
+    --ids                     Show the IDs of the elements in the tree view. Only available for human formatter
+    --legend                  Show the tree color legend. Only available for human formatter
 ```
 
 # Formatters
@@ -55,6 +58,28 @@ Node statistics
 ┌─────────────┬────┐
 │ Total Nodes │ 14 │
 └─────────────┴────┘
+┌──────┬───────┐
+│ Type │ Count │
+├──────┼───────┤
+│ svg  │ 1     │
+├──────┼───────┤
+│ g    │ 4     │
+├──────┼───────┤
+│ rect │ 3     │
+├──────┼───────┤
+│ path │ 4     │
+├──────┼───────┤
+│ text │ 2     │
+└──────┴───────┘
+┌────────────┬───────┐
+│ Category   │ Count │
+├────────────┼───────┤
+│ containers │ 5     │
+├────────────┼───────┤
+│ shapes     │ 7     │
+├────────────┼───────┤
+│ text       │ 2     │
+└────────────┴───────┘
 
 Node tree
 svg
@@ -75,24 +100,35 @@ svg
 
 Just to mention, the output is prettier than this bored block code ;).
 
-<img width="600" alt="Human output" src="https://cloud.githubusercontent.com/assets/4056725/26752798/4eb0d178-4858-11e7-8c9c-be691c5ffbc0.png">
+<img width="600" alt="Human output" src="https://cloud.githubusercontent.com/assets/4056725/26760733/44c2eafc-4920-11e7-8f7e-53b752e64aae.png">
 
 ## JSON
 
 ```bash
-svgi -o json icon.svg
+svgi -o json icon-small.svg
 ```
 
 ```json
 {
   "file": {
-    "name": "icon.svg",
-    "path": "/Users/angel/projects/svgi/icon.svg",
-    "size": 170
+    "name": "icon-small.svg",
+    "path": "/Users/angel/Projects/svgi/icon-small.svg",
+    "size": 204
   },
-  "totalNodes": 2,
+  "stats": {
+    "totalNodes": 2,
+    "types": {
+      "svg": 1,
+      "path": 1
+    },
+    "categories": {
+      "containers": 1,
+      "shapes": 1
+    }
+  },
   "nodes": {
     "type": "svg",
+    "category": "containers",
     "properties": {
       "viewBox": "0 0 16 16",
       "xmlns": "http://www.w3.org/2000/svg",
@@ -104,6 +140,7 @@ svgi -o json icon.svg
     "children": [
       {
         "type": "path",
+        "category": "shapes",
         "properties": {
           "d": "M5.667 2.667H7V16H5.667V2.667zm4.666 0V16H9V2.667h1.333zM2.333 0h1.334v10H2.333V0zm10 2.667h1.334V10h-1.334V2.667z"
         },
@@ -141,12 +178,20 @@ svgi -o yaml icon.svg
 
 ```yaml
 file:
-  name: icon.svg
-  path: /Users/angel/Projects/svgi/icon.svg
-  size: 170
-totalNodes: 2
+  name: icon-small.svg
+  path: /Users/angel/Projects/svgi/icon-small.svg
+  size: 204
+stats:
+  totalNodes: 2
+  types:
+    svg: 1
+    path: 1
+  categories:
+    containers: 1
+    shapes: 1
 nodes:
   type: svg
+  category: containers
   properties:
     viewBox: 0 0 16 16
     xmlns: 'http://www.w3.org/2000/svg'
@@ -156,6 +201,7 @@ nodes:
     stroke-miterlimit: '1.414'
   children:
     - type: path
+      category: shapes
       properties:
         d: >-
           M5.667 2.667H7V16H5.667V2.667zm4.666 0V16H9V2.667h1.333zM2.333
@@ -174,7 +220,19 @@ svgi --stats -o json icon.svg
 ```json
 {
   "stats": {
-    "totalNodes": 14
+    "totalNodes": 14,
+    "types": {
+      "svg": 1,
+      "g": 4,
+      "rect": 3,
+      "path": 4,
+      "text": 2
+    },
+    "categories": {
+      "containers": 5,
+      "shapes": 7,
+      "text": 2
+    }
   }
 }
 ```
