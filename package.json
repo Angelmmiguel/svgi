@@ -1,6 +1,6 @@
 {
   "name": "svgi",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "An SVG inspector tool",
   "main": "index.js",
   "bin": {
