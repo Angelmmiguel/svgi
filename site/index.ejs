@@ -1,0 +1,31 @@
+<%- include('partials/_head'); %>
+<body>
+  <%- include('partials/_ribbon'); %>
+  <header class="mw8 center ph3-ns mv5 tc">
+    <h1 class="mb3 mt0 f2">SVGI</h1>
+    <p>
+      A SVG inspector tool
+    </p>
+    <pre class="f7 dib mv2 br2"><code>npm install -g svgi</code></pre>
+    <p>
+      <span class="dib mh1">
+        <a class="github-button link f7" href="https://github.com/Angelmmiguel/svgi"
+            data-icon="octicon-star" data-show-count="true"
+            aria-label="Star Angelmmiguel/svgi on GitHub">Stars</a>
+      </span>
+      <span class="dib mh1">
+        <a class="github-button link f7" href="https://github.com/Angelmmiguel/svgi/fork"
+          data-icon="octicon-repo-forked" data-show-count="true"
+          aria-label="Fork Angelmmiguel/svgi on GitHub">Forks</a>
+      </span>
+    </p>
+    <!-- Asciinema demostration -->
+    <div class="mv4 mw7 center player">
+      <script type="text/javascript" src="https://asciinema.org/a/123343.js"
+        id="asciicast-123343" data-size="small" async></script>
+    </div>
+  </header>
+  <main class="mw8 center ph4 pv3 near-black mb4">
+    <%- content %>
+  </main>
+</body>

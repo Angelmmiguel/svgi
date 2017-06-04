@@ -62,3 +62,9 @@ typings/
 
 # My VSCode config
 .vscode
+
+# Mac things
+.DS_Store
+
+# Site build
+site/build

@@ -1,0 +1,40 @@
+// Additional styles
+main {
+  background-color: #fbfbfb;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+
+// Code
+pre {
+  padding: 1.3em;
+  background-color: #f9f6dc;
+  font-size: .75rem;
+  overflow-x: scroll;
+}
+
+p > code {
+  border: 1px solid #fbacac;
+  padding: .1em .4em;
+  border-radius: 3px;
+  font-size: .75rem;
+  background-color: #eee;
+}
+
+// Asciinema player
+.player {
+  position: relative;
+  min-height: 628px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 605px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    background-color: black;
+  }
+}

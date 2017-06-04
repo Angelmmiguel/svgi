@@ -2,6 +2,8 @@
 
 `svgi` is a CLI tool to inspect the content of SVG files. It provides you information about the file, the elements in the SVG and the hierarchy. It also count the number of elements and in the future, it will provide tips to improve the SVG
 
+[![asciicast](https://asciinema.org/a/123343.png)](https://asciinema.org/a/123343)
+
 # Installation
 
 `svgi` is written in javascript ([node](https://nodejs.org/)) and distributed through [npm](https://www.npmjs.com). Both are required to install `svgi`.
@@ -98,10 +100,6 @@ svg
 ├─ text
 └─ text
 ```
-
-Just to mention, the output is prettier than this bored block code ;).
-
-<img width="600" alt="Human output" src="https://cloud.githubusercontent.com/assets/4056725/26760733/44c2eafc-4920-11e7-8f7e-53b752e64aae.png">
 
 ## JSON
 
