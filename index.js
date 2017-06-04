@@ -47,6 +47,7 @@ commander
   .option('-t, --tree', 'Display only the node tree')
   .option('-b, --basic', 'Display only the basic information')
   .option('-s, --stats', 'Display only the node statistics')
+  .option('--all-stats', 'Return types and categories with 0 ocurrences in the stats object')
   .option('--ids', 'Show the IDs of the elements in the tree view. Only available for human formatter')
   .option('--legend', 'Show the tree color legend. Only available for human formatter')
   .arguments('<file>')
