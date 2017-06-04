@@ -1,0 +1,236 @@
+<head>
+  <title>svgi, a SVG inspector tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SVGI, a SVG inspector tool. Get all the information you need about an SVG file and export it in JSON, YAML or a readable format">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <a href="https://github.com/Angelmmiguel/svgi" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <header class="mw8 center ph3-ns mv5 tc">
+    <h1 class="mb3 mt0 f2">SVGI</h1>
+    <p>
+      A SVG inspector tool
+    </p>
+    <pre class="f7 dib mv2 br2"><code>npm install -g svgi</code></pre>
+    <p>
+      <span class="dib mh1">
+        <a class="github-button link f7" href="https://github.com/Angelmmiguel/svgi"
+            data-icon="octicon-star" data-show-count="true"
+            aria-label="Star Angelmmiguel/svgi on GitHub">Stars</a>
+      </span>
+      <span class="dib mh1">
+        <a class="github-button link f7" href="https://github.com/Angelmmiguel/svgi/fork"
+          data-icon="octicon-repo-forked" data-show-count="true"
+          aria-label="Fork Angelmmiguel/svgi on GitHub">Forks</a>
+      </span>
+    </p>
+    <!-- Asciinema demostration -->
+    <div class="mv4 mw7 center player">
+      <script type="text/javascript" src="https://asciinema.org/a/123343.js"
+        id="asciicast-123343" data-size="small" async></script>
+    </div>
+  </header>
+  <main class="mw8 center ph4 pv3 near-black mb4">
+    <h1 id="svgi">SVGI</h1>
+<p><code>svgi</code> is a CLI tool to inspect the content of SVG files. It provides you information about the file, the elements in the SVG and the hierarchy. It also count the number of elements and in the future, it will provide tips to improve the SVG</p>
+<h1 id="installation">Installation</h1>
+<p><code>svgi</code> is written in javascript (<a href="https://nodejs.org/">node</a>) and distributed through <a href="https://www.npmjs.com">npm</a>. Both are required to install <code>svgi</code>.</p>
+<p>To install it, just execute the following command in the terminal:</p>
+<pre><code>npm install -g svgi
+</code></pre><p>Then, <code>svgi</code> will be available in your path:</p>
+<pre><code class="lang-sh">svgi --help
+
+  Usage: svgi [options] &lt;file&gt;
+
+  Options:
+
+    -h, --help                output usage information
+    -o, --output &lt;formatter&gt;  Select the format of the output: json, yaml, or human (default)
+    -t, --tree                Display only the node tree
+    -b, --basic               Display only the basic information
+    -s, --stats               Display only the node statistics
+    --all-stats               Return types and categories with 0 ocurrences in the stats object
+    --ids                     Show the IDs of the nodes in the tree view. Only available for human formatter
+    --props                   Show the properties of the nodes in the tree view. Only available for human formatter
+    --legend                  Show the tree color legend. Only available for human formatter
+</code></pre>
+<h1 id="formatters">Formatters</h1>
+<p>You can change the output format with the <code>-o</code> option.</p>
+<h2 id="human">Human</h2>
+<p>This is the default option. Also, <strong>we&#39;re working on this format</strong>.</p>
+<pre><code class="lang-bash">svgi icon.svg
+</code></pre>
+<pre><code>Basic information
+┌──────┬─────────────────────────────────────┐
+│ Name │ icon.svg                            │
+├──────┼─────────────────────────────────────┤
+│ Path │ /Users/angel/Projects/svgi/icon.svg │
+├──────┼─────────────────────────────────────┤
+│ Size │ 204                                 │
+└──────┴─────────────────────────────────────┘
+
+Node statistics
+┌─────────────┬────┐
+│ Total Nodes │ 14 │
+└─────────────┴────┘
+┌──────┬───────┐
+│ Type │ Count │
+├──────┼───────┤
+│ svg  │ 1     │
+├──────┼───────┤
+│ g    │ 4     │
+├──────┼───────┤
+│ rect │ 3     │
+├──────┼───────┤
+│ path │ 4     │
+├──────┼───────┤
+│ text │ 2     │
+└──────┴───────┘
+┌────────────┬───────┐
+│ Category   │ Count │
+├────────────┼───────┤
+│ containers │ 5     │
+├────────────┼───────┤
+│ shapes     │ 7     │
+├────────────┼───────┤
+│ text       │ 2     │
+└────────────┴───────┘
+
+Node tree
+svg
+├─ g
+│  └─ g
+│     └─ g
+│        ├─ rect
+│        ├─ rect
+│        └─ g
+│           ├─ rect
+│           ├─ path
+│           ├─ path
+│           ├─ path
+│           └─ path
+├─ text
+└─ text
+</code></pre><h2 id="json">JSON</h2>
+<pre><code class="lang-bash">svgi -o json icon-small.svg
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;file&quot;: {
+    &quot;name&quot;: &quot;icon-small.svg&quot;,
+    &quot;path&quot;: &quot;/Users/angel/Projects/svgi/icon-small.svg&quot;,
+    &quot;size&quot;: 204
+  },
+  &quot;stats&quot;: {
+    &quot;totalNodes&quot;: 2,
+    &quot;types&quot;: {
+      &quot;svg&quot;: 1,
+      &quot;path&quot;: 1
+    },
+    &quot;categories&quot;: {
+      &quot;containers&quot;: 1,
+      &quot;shapes&quot;: 1
+    }
+  },
+  &quot;nodes&quot;: {
+    &quot;type&quot;: &quot;svg&quot;,
+    &quot;category&quot;: &quot;containers&quot;,
+    &quot;properties&quot;: {
+      &quot;viewBox&quot;: &quot;0 0 16 16&quot;,
+      &quot;xmlns&quot;: &quot;http://www.w3.org/2000/svg&quot;,
+      &quot;fill-rule&quot;: &quot;evenodd&quot;,
+      &quot;clip-rule&quot;: &quot;evenodd&quot;,
+      &quot;stroke-linejoin&quot;: &quot;round&quot;,
+      &quot;stroke-miterlimit&quot;: &quot;1.414&quot;
+    },
+    &quot;children&quot;: [
+      {
+        &quot;type&quot;: &quot;path&quot;,
+        &quot;category&quot;: &quot;shapes&quot;,
+        &quot;properties&quot;: {
+          &quot;d&quot;: &quot;M5.667 2.667H7V16H5.667V2.667zm4.666 0V16H9V2.667h1.333zM2.333 0h1.334v10H2.333V0zm10 2.667h1.334V10h-1.334V2.667z&quot;
+        },
+        &quot;children&quot;: []
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="combine-json-output-with-jq">Combine JSON output with jq</h3>
+<p>You can use the well known <a href="https://stedolan.github.io/jq/">jq</a> command-line JSON processor to read and filter the output of the JSON formatter:</p>
+<pre><code class="lang-bash">svgi -o json icon.svg | jq &#39;.nodes.properties&#39;
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;viewBox&quot;: &quot;0 0 16 16&quot;,
+  &quot;xmlns&quot;: &quot;http://www.w3.org/2000/svg&quot;,
+  &quot;fill-rule&quot;: &quot;evenodd&quot;,
+  &quot;clip-rule&quot;: &quot;evenodd&quot;,
+  &quot;stroke-linejoin&quot;: &quot;round&quot;,
+  &quot;stroke-miterlimit&quot;: &quot;1.414&quot;
+}
+</code></pre>
+<h2 id="yaml">YAML</h2>
+<pre><code class="lang-bash">svgi -o yaml icon.svg
+</code></pre>
+<pre><code class="lang-yaml">file:
+  name: icon-small.svg
+  path: /Users/angel/Projects/svgi/icon-small.svg
+  size: 204
+stats:
+  totalNodes: 2
+  types:
+    svg: 1
+    path: 1
+  categories:
+    containers: 1
+    shapes: 1
+nodes:
+  type: svg
+  category: containers
+  properties:
+    viewBox: 0 0 16 16
+    xmlns: &#39;http://www.w3.org/2000/svg&#39;
+    fill-rule: evenodd
+    clip-rule: evenodd
+    stroke-linejoin: round
+    stroke-miterlimit: &#39;1.414&#39;
+  children:
+    - type: path
+      category: shapes
+      properties:
+        d: &gt;-
+          M5.667 2.667H7V16H5.667V2.667zm4.666 0V16H9V2.667h1.333zM2.333
+          0h1.334v10H2.333V0zm10 2.667h1.334V10h-1.334V2.667z
+      children: []
+</code></pre>
+<h2 id="limit-the-output">Limit the output</h2>
+<p>The params <code>-b, --basic</code>, <code>-s, --stats</code> and <code>-t, --tree</code> allow you to limit the output of the command:</p>
+<pre><code class="lang-bash">svgi --stats -o json icon.svg
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;stats&quot;: {
+    &quot;totalNodes&quot;: 14,
+    &quot;types&quot;: {
+      &quot;svg&quot;: 1,
+      &quot;g&quot;: 4,
+      &quot;rect&quot;: 3,
+      &quot;path&quot;: 4,
+      &quot;text&quot;: 2
+    },
+    &quot;categories&quot;: {
+      &quot;containers&quot;: 5,
+      &quot;shapes&quot;: 7,
+      &quot;text&quot;: 2
+    }
+  }
+}
+</code></pre>
+<h1 id="license">License</h1>
+<p><code>svgi</code> is released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>. Developed by <a href="https://twitter.com/laux_es">@Laux_es ;)</a>.</p>
+
+  </main>
+</body>
