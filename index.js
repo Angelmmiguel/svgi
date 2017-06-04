@@ -6,6 +6,7 @@ const fs = require('fs'),
   xml2js = require('xml2js'),
   ascii = require('colors/safe'),
   commander = require('commander'),
+  colors = require('colors/safe'),
   // Project
   humanFormatter = require('./lib/formatters/human'),
   JSONFormatter = require('./lib/formatters/json'),
@@ -18,26 +19,40 @@ const parser = new xml2js.Parser();
 // Declare the app
 const app = (filePath, options) => {
   fs.readFile(filePath, (err, data) => {
-    parser.parseString(data, (err, result) => {
-      // Load the SVG
-      let svg = new SVG(filePath, result),
-        output;
-
-      switch(options.output) {
-        case 'json':
-          output = JSONFormatter(svg, options);
-          break;
-        case 'yaml':
-          output = YAMLFormatter(svg, options);
+    if (err) {
+      switch(err.code) {
+        case 'ENOENT':
+          console.error(`${colors.red('[Error]')} There file ${filePath} doesn't exist`);
           break;
         default:
-          output = humanFormatter(svg, options);
+          console.error(`${colors.red('[Error]')} There was an error opening the file: ${err.message}`);
       }
+    } else {
+      parser.parseString(data, (err, result) => {
+        if (err) {
+          console.error(`${colors.red('[Error]')} The provided SVG file is not valid. Reason:\n${err.message}`)
+        } else {
+          // Load the SVG
+          let svg = new SVG(filePath, result),
+            output;
 
-      // Display the output
-      console.log(output);
-    });
-  })
+          switch(options.output) {
+            case 'json':
+              output = JSONFormatter(svg, options);
+              break;
+            case 'yaml':
+              output = YAMLFormatter(svg, options);
+              break;
+            default:
+              output = humanFormatter(svg, options);
+          }
+
+          // Display the output
+          console.log(output);
+        }
+      });
+    }
+  });
 }
 
 // Parse options and run the CLI
