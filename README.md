@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/svgi.svg)](https://badge.fury.io/js/svgi)
+
 # svgi
 
 `svgi` is a CLI tool to inspect the content of SVG files. It provides you information about the file, the elements in the SVG and the hierarchy. It also count the number of elements and in the future, it will provide tips to improve the SVG
