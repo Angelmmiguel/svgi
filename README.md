@@ -37,6 +37,10 @@ svgi --help
     --legend                  Show the tree color legend. Only available for human formatter
 ```
 
+### Node Version
+
+`svgi` requires a `> 6` node version because it uses some features from the new versions of ECMAScript. We are working to provide executable files for the environments that doesn't fit with the current requirements. More information at [#8](https://github.com/Angelmmiguel/svgi/issues/8) and [#11](https://github.com/Angelmmiguel/svgi/issues/11).
+
 # Formatters
 
 You can change the output format with the `-o` option.

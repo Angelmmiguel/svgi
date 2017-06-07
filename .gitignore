@@ -66,6 +66,9 @@ typings/
 # Mac things
 .DS_Store
 
+# PKG builds
+/build
+
 # Site build
 site/build
 site/.publish
