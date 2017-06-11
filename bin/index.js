@@ -27,22 +27,26 @@ const app = (filePath, options) => {
       }
     } else {
       // Load the SVG
-      let svg = new SVG(data, filePath);
-      let output;
+      try {
+        let svg = new SVG(data, filePath);
+        let output;
 
-      switch (options.output) {
-        case 'json':
-          output = jsonFormatter(svg, options);
-          break;
-        case 'yaml':
-          output = yamlFormatter(svg, options);
-          break;
-        default:
-          output = humanFormatter(svg, options);
+        switch (options.output) {
+          case 'json':
+            output = jsonFormatter(svg, options);
+            break;
+          case 'yaml':
+            output = yamlFormatter(svg, options);
+            break;
+          default:
+            output = humanFormatter(svg, options);
+        }
+
+        // Display the output
+        console.log(output);
+      } catch (err) {
+        console.log(err);
       }
-
-      // Display the output
-      console.log(output);
     }
   });
 };
