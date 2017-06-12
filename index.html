@@ -39,10 +39,11 @@
     </div>
   </header>
   <main class="mw8 center ph4 pv3 near-black mb4">
-    <p><a href="https://badge.fury.io/js/svgi"><img src="https://badge.fury.io/js/svgi.svg" alt="npm version"></a> <a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi.svg?type=shield" alt="FOSSA Status"></a></p>
+    <p><a href="https://badge.fury.io/js/svgi"><img src="https://badge.fury.io/js/svgi.svg" alt="npm version"></a> <a href="https://travis-ci.org/Angelmmiguel/svgi"><img src="https://travis-ci.org/Angelmmiguel/svgi.svg?branch=master" alt="Build Status"></a> <a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi.svg?type=shield" alt="FOSSA Status"></a></p>
 <h1 id="svgi">svgi</h1>
 <p><code>svgi</code> is a CLI tool to inspect the content of SVG files. It provides you information about the file, the elements in the SVG and the hierarchy. It also count the number of elements and in the future, it will provide tips to improve the SVG</p>
 <h1 id="installation">Installation</h1>
+<h2 id="cli">CLI</h2>
 <p><code>svgi</code> is written in javascript (<a href="https://nodejs.org/">node</a>) and distributed through <a href="https://www.npmjs.com">npm</a>. Both are required to install <code>svgi</code>.</p>
 <p>To install it, just execute the following command in the terminal:</p>
 <pre><code>npm install -g svgi
@@ -65,8 +66,31 @@
 </code></pre>
 <h3 id="node-version">Node Version</h3>
 <p><code>svgi</code> requires a <code>&gt; 6</code> node version because it uses some features from the new versions of ECMAScript. We are working to provide executable files for the environments that doesn&#39;t fit with the current requirements. More information at <a href="https://github.com/Angelmmiguel/svgi/issues/8">#8</a> and <a href="https://github.com/Angelmmiguel/svgi/issues/11">#11</a>.</p>
-<h1 id="formatters">Formatters</h1>
-<p>You can change the output format with the <code>-o</code> option.</p>
+<h2 id="library">Library</h2>
+<p>You can also integrate <code>svgi</code> in your projects. This library will provide you a powerful way to get information about SVG files. We only need to install the library and add it as a depedency in our project:</p>
+<pre><code>npm install --save svgi
+</code></pre><p>Now, you can start to inspect SVG files from your code :)</p>
+<pre><code class="lang-js">const SVG = require(&#39;./&#39;)
+
+let svg = new SVG(&#39;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;100&quot; width=&quot;100&quot; style=&quot;fill: #0000ff&quot;/&gt;&lt;/svg&gt;&#39;)
+// Get the report
+svg.report()
+/*
+{ stats:
+   { totalNodes: 2,
+     types: { svg: 1, rect: 1 },
+     categories: { containers: 1, shapes: 1 } },
+  nodes:
+   { type: &#39;svg&#39;,
+     category: &#39;containers&#39;,
+     properties:
+      { xmlns: &#39;http://www.w3.org/2000/svg&#39;,
+        &#39;xmlns:xlink&#39;: &#39;http://www.w3.org/1999/xlink&#39; },
+     children: [ [Object] ] } }
+*/
+</code></pre>
+<h1 id="cli-output">CLI Output</h1>
+<p>You can change the output format of the CLI with the <code>-o</code> option.</p>
 <h2 id="human">Human</h2>
 <p>This is the default option. Also, <strong>we&#39;re working on this format</strong>.</p>
 <pre><code class="lang-bash">svgi icon.svg
