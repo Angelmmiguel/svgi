@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "6"
+cache: yarn
+install:
+  - yarn install
+
+jobs:
+  include:
+    - stage: client:test
+      script:
+        - yarn run test
+    - stage: client:lint
+      script:
+        - yarn run lint
