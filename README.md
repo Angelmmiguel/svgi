@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/svgi.svg)](https://badge.fury.io/js/svgi) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi?ref=badge_shield)
+[![npm version](https://badge.fury.io/js/svgi.svg)](https://badge.fury.io/js/svgi) [![Build Status](https://travis-ci.org/Angelmmiguel/svgi.svg?branch=master)](https://travis-ci.org/Angelmmiguel/svgi) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi?ref=badge_shield)
 
 # svgi
 
