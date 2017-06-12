@@ -7,9 +7,9 @@ install:
 
 jobs:
   include:
-    - stage: client:test
+    - stage: test
       script:
         - yarn run test
-    - stage: client:lint
+    - stage: lint
       script:
         - yarn run lint
