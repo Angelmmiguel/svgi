@@ -8,6 +8,8 @@
 
 # Installation
 
+## CLI
+
 `svgi` is written in javascript ([node](https://nodejs.org/)) and distributed through [npm](https://www.npmjs.com). Both are required to install `svgi`.
 
 To install it, just execute the following command in the terminal:
@@ -41,9 +43,40 @@ svgi --help
 
 `svgi` requires a `> 6` node version because it uses some features from the new versions of ECMAScript. We are working to provide executable files for the environments that doesn't fit with the current requirements. More information at [#8](https://github.com/Angelmmiguel/svgi/issues/8) and [#11](https://github.com/Angelmmiguel/svgi/issues/11).
 
-# Formatters
+## Library
 
-You can change the output format with the `-o` option.
+You can also integrate `svgi` in your projects. This library will provide you a powerful way to get information about SVG files. We only need to install the library and add it as a depedency in our project:
+
+```
+npm install --save svgi
+```
+
+Now, you can start to inspect SVG files from your code :)
+
+```js
+const SVG = require('./')
+
+let svg = new SVG('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="10" y="10" height="100" width="100" style="fill: #0000ff"/></svg>')
+// Get the report
+svg.report()
+/*
+{ stats:
+   { totalNodes: 2,
+     types: { svg: 1, rect: 1 },
+     categories: { containers: 1, shapes: 1 } },
+  nodes:
+   { type: 'svg',
+     category: 'containers',
+     properties:
+      { xmlns: 'http://www.w3.org/2000/svg',
+        'xmlns:xlink': 'http://www.w3.org/1999/xlink' },
+     children: [ [Object] ] } }
+*/
+```
+
+# CLI Output
+
+You can change the output format of the CLI with the `-o` option.
 
 ## Human
 
