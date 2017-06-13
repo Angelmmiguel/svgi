@@ -70,11 +70,11 @@
 <p>You can also integrate <code>svgi</code> in your projects. This library will provide you a powerful way to get information about SVG files. We only need to install the library and add it as a depedency in our project:</p>
 <pre><code>npm install --save svgi
 </code></pre><p>Now, you can start to inspect SVG files from your code :)</p>
-<pre><code class="lang-js">const SVG = require(&#39;./&#39;)
+<pre><code class="lang-js">const SVG = require(&#39;svgi&#39;);
 
-let svg = new SVG(&#39;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;100&quot; width=&quot;100&quot; style=&quot;fill: #0000ff&quot;/&gt;&lt;/svg&gt;&#39;)
+let svg = new SVG(&#39;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;100&quot; width=&quot;100&quot; style=&quot;fill: #0000ff&quot;/&gt;&lt;/svg&gt;&#39;);
 // Get the report
-svg.report()
+svg.report();
 /*
 { stats:
    { totalNodes: 2,
