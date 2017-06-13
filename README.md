@@ -54,11 +54,11 @@ npm install --save svgi
 Now, you can start to inspect SVG files from your code :)
 
 ```js
-const SVG = require('./')
+const SVG = require('svgi');
 
-let svg = new SVG('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="10" y="10" height="100" width="100" style="fill: #0000ff"/></svg>')
+let svg = new SVG('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="10" y="10" height="100" width="100" style="fill: #0000ff"/></svg>');
 // Get the report
-svg.report()
+svg.report();
 /*
 { stats:
    { totalNodes: 2,
