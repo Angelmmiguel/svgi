@@ -41,7 +41,11 @@ svgi --help
 
 ### Node Version
 
-`svgi` requires a `> 6` node version because it uses some features from the new versions of ECMAScript. We are working to provide executable files for the environments that doesn't fit with the current requirements. More information at [#8](https://github.com/Angelmmiguel/svgi/issues/8) and [#11](https://github.com/Angelmmiguel/svgi/issues/11).
+`svgi` requires a `> 6` node version because it uses some features from the new versions of ECMAScript.
+
+### Binary files
+
+We are providing executable files for the environments that do not fit within current requirements. Binaries for Linux, macOS, and Windows can be downloaded from [the releases page on GitHub](https://github.com/Angelmmiguel/svgi/releases).
 
 ## Library
 
