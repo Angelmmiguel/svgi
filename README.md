@@ -282,3 +282,9 @@ svgi --stats -o json icon.svg
 # License
 
 `svgi` is released under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0). Developed by [@Laux_es ;)](https://twitter.com/laux_es).
+
+# Sponsors
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi.svg' />
+</a>
