@@ -20,7 +20,7 @@ const parseStdin = () => {
     });
 
     process.stdin.on('error', (error) => {
-      reject(error);
+      reject(`There was an error parsing the STDIN data: ${error}`);
     });
 
     process.stdin.on('end', function() {
@@ -30,22 +30,22 @@ const parseStdin = () => {
 };
 
 const parseFile = (filePath) => {
-return new Promise((resolve, reject) => {
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      switch(err.code) {
-        case 'ENOENT':
-          reject(`${colors.red('[Error]')} There file ${filePath} doesn't exist`);
-          break;
-        default:
-          reject(`${colors.red('[Error]')} There was an error opening the ` +
-            `file: ${err.message}`);
+  return new Promise((resolve, reject) => {
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        switch(err.code) {
+          case 'ENOENT':
+            reject(`${colors.red('[Error]')} There file ${filePath} doesn't exist`);
+            break;
+          default:
+            reject(`${colors.red('[Error]')} There was an error opening the ` +
+              `file: ${err.message}`);
+        }
+      } else {
+        resolve(data);
       }
-    } else {
-      resolve(data);
-    }
+    });
   });
-});
 };
 
 // Declare the app
@@ -63,6 +63,10 @@ const app = (filePath) => {
         let svg = new SVG(data, filePath);
         let output;
 
+        if(filePath && !process.stdin.isTTY) {
+          commander.dualInputs = true;
+        };
+
         switch (commander.output) {
           case 'json':
             output = jsonFormatter(svg, commander);
@@ -71,9 +75,6 @@ const app = (filePath) => {
             output = yamlFormatter(svg, commander);
             break;
           default:
-            if(filePath && !process.stdin.isTTY) {
-              commander.dualInputs = true;
-            };
             output = humanFormatter(svg, commander);
         }
 
