@@ -20,7 +20,7 @@ const parseStdin = () => {
     });
 
     process.stdin.on('error', (error) => {
-      reject(`There was an error parsing the STDIN data: ${error}`);
+      reject(`${colors.red('[Error]')} There was an error parsing the STDIN data: ${error}`);
     });
 
     process.stdin.on('end', function() {
@@ -54,8 +54,10 @@ const app = (filePath) => {
 
   if (!process.stdin.isTTY) {
     dataPromise = parseStdin()
-  } else {
+  } else if (filePath) {
     dataPromise = parseFile(filePath)
+  } else {
+    commander.help();
   }
 
   dataPromise
