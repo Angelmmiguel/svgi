@@ -288,3 +288,14 @@ svgi --stats -o json icon.svg
 <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi'>
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi.svg' />
 </a>
+
+## Credits
+
+Made with :heart: by [Angelmmiguel](https://github.com/Angelmmiguel) and all these wonderful contributors ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+| [<img src="https://avatars2.githubusercontent.com/u/4056725?s=400&v=4" width="100px;"/><br /><sub>Angelmmiguel</sub>](https://github.com/Angelmmiguel)<br />[💻](https://github.com/Angelmmiguel/svgi/commits?author=Angelmmiguel "Code") [🔧](#tool-k1r0s "Tools")  | [<img src="https://avatars3.githubusercontent.com/u/9168400?s=400&v=4" width="100px;"/><br /><sub>JoshuaAF</sub>](https://github.com/JoshuaAF)<br />[📖](https://github.com/Angelmmiguel/svgi/commits?author=JoshuaAF "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/319128?s=400&v=4" width="100px;"/><br /><sub>shindakun</sub>](https://github.com/shindakun)<br />[📖](https://github.com/Angelmmiguel/svgi/commits?author=shindakun "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/7225802?s=400&v=4" width="100px;"/><br /><sub>aarongarciah</sub>](https://github.com/aarongarciah)<br />[💻](https://github.com/Angelmmiguel/svgi/commits?author=aarongarciah "Code") |
+|:--------------------:|:--------------------:|:--------------------:|:--------------------:|
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
