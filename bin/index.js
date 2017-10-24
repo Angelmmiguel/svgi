@@ -102,7 +102,7 @@ commander
                      ' Only available for human formatter')
   .option('--legend', 'Show the tree color legend. Only available for human ' +
                       'formatter')
-  .arguments('[file]')
+  .arguments('[file|stdin]')
   .action(app)
   .parse(process.argv);
 
