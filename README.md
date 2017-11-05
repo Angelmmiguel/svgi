@@ -1,5 +1,5 @@
 [![npm version](https://badge.fury.io/js/svgi.svg)](https://badge.fury.io/js/svgi) [![Build Status](https://travis-ci.org/Angelmmiguel/svgi.svg?branch=master)](https://travis-ci.org/Angelmmiguel/svgi) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi?ref=badge_shield)
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 # svgi
 
@@ -294,6 +294,9 @@ svgi --stats -o json icon.svg
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section --><!-- ALL-CONTRIBUTORS-LIST:END -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars0.githubusercontent.com/u/4056725?v=4" width="100px;"/><br /><sub>Ángel M</sub>](https://irb.rocks)<br />[🐛](https://github.com/Angelmmiguel/svgi/issues?q=author%3AAngelmmiguel "Bug reports") [💻](https://github.com/Angelmmiguel/svgi/commits?author=Angelmmiguel "Code") [🎨](#design-Angelmmiguel "Design") [📖](https://github.com/Angelmmiguel/svgi/commits?author=Angelmmiguel "Documentation") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
