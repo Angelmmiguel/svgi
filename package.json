@@ -9,7 +9,9 @@
   "scripts": {
     "test": "jest --ci --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint ./lib"
+    "lint": "eslint ./lib",
+    "add-contributor": "all-contributors add",
+    "generate-all-contibutors": "all-contributors generate"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
+    "all-contributors-cli": "4.5.1",
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.8.0",
     "jest": "^20.0.4"

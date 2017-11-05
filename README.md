@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/svgi.svg)](https://badge.fury.io/js/svgi) [![Build Status](https://travis-ci.org/Angelmmiguel/svgi.svg?branch=master)](https://travis-ci.org/Angelmmiguel/svgi) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FAngelmmiguel%2Fsvgi?ref=badge_shield)
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
 
 # svgi
 
@@ -288,3 +289,11 @@ svgi --stats -o json icon.svg
 <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi'>
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi.svg' />
 </a>
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section --><!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
