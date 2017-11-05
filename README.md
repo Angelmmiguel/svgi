@@ -290,7 +290,7 @@ svgi --stats -o json icon.svg
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi.svg' />
 </a>
 
-## Contributors
+# Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
