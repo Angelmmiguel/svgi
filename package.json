@@ -11,7 +11,7 @@
     "test:watch": "jest --watch",
     "lint": "eslint ./lib",
     "add-contributor": "all-contributors add",
-    "generate-all-contibutors": "all-contributors generate"
+    "generate-all-contributors": "all-contributors generate"
   },
   "repository": {
     "type": "git",
