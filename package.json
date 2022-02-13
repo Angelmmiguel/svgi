@@ -31,17 +31,17 @@
   "homepage": "https://github.com/Angelmmiguel/svgi#readme",
   "dependencies": {
     "ascii-tree": "^0.3.0",
-    "cli-table": "^0.3.1",
-    "colors": "^1.1.2",
-    "commander": "^2.9.0",
-    "filesize": "^3.5.10",
-    "js-yaml": "^3.8.4",
-    "xml2js": "^0.4.17"
+    "cli-table": "^0.3.11",
+    "colors": "^1.4.0",
+    "commander": "8.3.0",
+    "filesize": "^8.0.7",
+    "js-yaml": "^4.1.0",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "all-contributors-cli": "4.5.1",
-    "eslint": "^3.19.0",
-    "eslint-config-google": "^0.8.0",
-    "jest": "^20.0.4"
+    "all-contributors-cli": "6.20.0",
+    "eslint": "^8.8.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^27.5.1"
   }
 }

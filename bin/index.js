@@ -3,7 +3,7 @@
 // Requires (Native)
 const fs = require('fs');
 // External
-const commander = require('commander');
+const { program, Option } = require('commander');
 const colors = require('colors/safe');
 // Project
 const humanFormatter = require('../lib/formatters/human');
@@ -49,7 +49,7 @@ const parseFile = (filePath) => {
 };
 
 // Declare the app
-const app = (filePath) => {
+const app = (filePath, opts) => {
   let dataPromise;
 
   if (!process.stdin.isTTY) {
@@ -57,7 +57,7 @@ const app = (filePath) => {
   } else if (filePath) {
     dataPromise = parseFile(filePath)
   } else {
-    commander.help();
+    program.help();
   }
 
   dataPromise
@@ -69,15 +69,15 @@ const app = (filePath) => {
           commander.dualInputs = true;
         };
 
-        switch (commander.output) {
+        switch (opts.output) {
           case 'json':
-            output = jsonFormatter(svg, commander);
+            output = jsonFormatter(svg, opts);
             break;
           case 'yaml':
-            output = yamlFormatter(svg, commander);
+            output = yamlFormatter(svg, opts);
             break;
           default:
-            output = humanFormatter(svg, commander);
+            output = humanFormatter(svg, opts);
         }
 
         // Display the output
@@ -87,10 +87,15 @@ const app = (filePath) => {
 };
 
 // Parse options and run the CLI
-commander
-  .option('-o, --output <formatter>',
-          'Select the format of the output: json, yaml, or human (default)',
-          /^(json|yaml|human)$/i, 'human')
+program
+  .addOption(
+    new Option(
+      "-o, --output <formatter>",
+      "Select the format of the output"
+    )
+      .choices(["json", "yaml", "human"])
+      .default("human")
+  )
   .option('-t, --tree', 'Display only the node tree')
   .option('-b, --basic', 'Display only the basic information')
   .option('-s, --stats', 'Display only the node statistics')
@@ -105,9 +110,3 @@ commander
   .arguments('[file|stdin]')
   .action(app)
   .parse(process.argv);
-
-// If the argument is not passed, commander does not call app,
-// so it must be called manually here
-if (commander.args.length === 0) {
-  app();
-}
