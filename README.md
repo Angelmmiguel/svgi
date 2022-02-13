@@ -13,14 +13,13 @@
 
 `svgi` is written in javascript ([node](https://nodejs.org/)) and distributed through [npm](https://www.npmjs.com). Both are required to install `svgi`.
 
-To install it, just execute the following command in the terminal:
+To install it, run the following command in the terminal:
 
 ```
 npm install -g svgi
 ```
 
 Then, `svgi` will be available in your path:
-
 
 ```sh
 svgi --help
@@ -42,7 +41,7 @@ svgi --help
 
 ### Node Version
 
-`svgi` requires a `> 6` node version because it uses some features from the new versions of ECMAScript.
+`svgi` requires a `> 6` node version because it uses some features from the new versions of ECMAScript. I recommend you to use the current LTS or a newerversion.
 
 ### Binary files
 
@@ -59,9 +58,11 @@ npm install --save svgi
 Now, you can start to inspect SVG files from your code :)
 
 ```js
-const SVG = require('svgi');
+const SVG = require("svgi");
 
-let svg = new SVG('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="10" y="10" height="100" width="100" style="fill: #0000ff"/></svg>');
+let svg = new SVG(
+  '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="10" y="10" height="100" width="100" style="fill: #0000ff"/></svg>'
+);
 // Get the report
 svg.report();
 /*
@@ -237,11 +238,11 @@ nodes:
   category: containers
   properties:
     viewBox: 0 0 16 16
-    xmlns: 'http://www.w3.org/2000/svg'
+    xmlns: "http://www.w3.org/2000/svg"
     fill-rule: evenodd
     clip-rule: evenodd
     stroke-linejoin: round
-    stroke-miterlimit: '1.414'
+    stroke-miterlimit: "1.414"
   children:
     - type: path
       category: shapes
@@ -282,21 +283,17 @@ svgi --stats -o json icon.svg
 
 # License
 
-`svgi` is released under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0). Developed by [@Laux_es ;)](https://twitter.com/laux_es).
-
-# Sponsors
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Bd3aXba7JBxkLsouBkMJjayn/Angelmmiguel/svgi.svg' />
-</a>
+`svgi` is released under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0). Developed by [Angel M](https://angel.kiwi) :).
 
 # Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 | [<img src="https://avatars0.githubusercontent.com/u/4056725?v=4" width="100px;"/><br /><sub>Ángel M</sub>](https://irb.rocks)<br />[🐛](https://github.com/Angelmmiguel/svgi/issues?q=author%3AAngelmmiguel "Bug reports") [💻](https://github.com/Angelmmiguel/svgi/commits?author=Angelmmiguel "Code") [🎨](#design-Angelmmiguel "Design") [📖](https://github.com/Angelmmiguel/svgi/commits?author=Angelmmiguel "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/7225802?v=4" width="100px;"/><br /><sub>Aarón García Hervás</sub>](https://aarongarciah.com)<br />[💻](https://github.com/Angelmmiguel/svgi/commits?author=aarongarciah "Code") | [<img src="https://avatars2.githubusercontent.com/u/319128?v=4" width="100px;"/><br /><sub>Steve Layton</sub>](https://shindakun.net/)<br />[📖](https://github.com/Angelmmiguel/svgi/commits?author=shindakun "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/9168400?v=4" width="100px;"/><br /><sub>Joshua Fuller</sub>](https://github.com/JoshuaAF)<br />[💻](https://github.com/Angelmmiguel/svgi/commits?author=JoshuaAF "Code") | [<img src="https://avatars3.githubusercontent.com/u/784056?v=4" width="100px;"/><br /><sub>Lionel</sub>](https://elrumordelaluz.com)<br />[💻](https://github.com/Angelmmiguel/svgi/commits?author=elrumordelaluz "Code") [📖](https://github.com/Angelmmiguel/svgi/commits?author=elrumordelaluz "Documentation") |
-| :---: | :---: | :---: | :---: | :---: |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
