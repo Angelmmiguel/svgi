@@ -18,7 +18,6 @@ jobs:
           cache: "npm"
       - name: woke
         uses: get-woke/woke-action@v0
-        run: woke ./* ./**/*
         with:
           fail-on-error: true
       - name: Run AlexJS
