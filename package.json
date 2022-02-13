@@ -7,8 +7,9 @@
     "svgi": "./bin/index.js"
   },
   "scripts": {
-    "test": "jest --ci --coverage",
-    "test:watch": "jest --watch",
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage",
+    "test:watch": "vitest watch",
     "lint": "eslint ./lib",
     "add-contributor": "all-contributors add",
     "generate-all-contributors": "all-contributors generate"
@@ -39,9 +40,10 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "all-contributors-cli": "6.20.0",
+    "c8": "^7.11.0",
     "eslint": "^8.8.0",
     "eslint-config-google": "^0.14.0",
-    "jest": "^27.5.1"
+    "vite": "^2.8.1",
+    "vitest": "^0.3.4"
   }
 }
