@@ -13,7 +13,7 @@
 
 `svgi` is written in javascript ([node](https://nodejs.org/)) and distributed through [npm](https://www.npmjs.com). Both are required to install `svgi`.
 
-To install it, just execute the following command in the terminal:
+To install it, run the following command in the terminal:
 
 ```
 npm install -g svgi
