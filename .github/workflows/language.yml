@@ -1,0 +1,24 @@
+name: SVGI Inclusive Language
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 17
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17.x
+          cache: "npm"
+      - name: woke
+        uses: get-woke/woke-action@v0
+        with:
+          fail-on-error: true
+      - name: Run AlexJS
+        run: npx alex@10.0.0 README.md
