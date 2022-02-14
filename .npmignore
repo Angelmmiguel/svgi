@@ -1,0 +1,11 @@
+# Ignore all files not related with the final build
+.github
+coverage
+node_modules
+scripts
+site
+test
+.all-contributorsrc
+.eslintrc
+.gitignore
+.travis.yml
