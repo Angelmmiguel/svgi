@@ -2,7 +2,9 @@
 
 // Requires (Native)
 const fs = require('fs');
+const path = require('path');
 // External
+const filesize = require('filesize');
 const { program, Option } = require('commander');
 const colors = require('colors/safe');
 // Project
@@ -62,22 +64,33 @@ const app = (filePath, opts) => {
 
   dataPromise
     .then((data) => {
-        let svg = new SVG(data, filePath);
+        let svg = new SVG(data);
         let output;
+        let file;
 
         if(filePath && !process.stdin.isTTY) {
           commander.dualInputs = true;
         };
 
+        if(filePath) {
+          let fileStats = fs.statSync(__dirname, filePath);
+
+          file = {
+            name: path.resolve(filePath),
+            path: path.basename(filePath),
+            size: filesize(fileStats.size)
+          }
+        }
+
         switch (opts.output) {
           case 'json':
-            output = jsonFormatter(svg, opts);
+            output = jsonFormatter(svg, file, opts);
             break;
           case 'yaml':
-            output = yamlFormatter(svg, opts);
+            output = yamlFormatter(svg, file, opts);
             break;
           default:
-            output = humanFormatter(svg, opts);
+            output = humanFormatter(svg, file, opts);
         }
 
         // Display the output
