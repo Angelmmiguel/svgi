@@ -1,0 +1,43 @@
+{
+  "name": "svgi",
+  "version": "1.1.1",
+  "description": "An SVG inspector tool",
+  "main": "index.js",
+  "bin": {
+    "svgi": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage",
+    "test:watch": "vitest watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angelmmiguel/svgi.git"
+  },
+  "keywords": [
+    "svg",
+    "svg inspector",
+    "svg paths",
+    "paths"
+  ],
+  "author": "Angel M Miguel <hi@angel.kiwi>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Angelmmiguel/svgi/issues"
+  },
+  "homepage": "https://github.com/Angelmmiguel/svgi#readme",
+  "dependencies": {
+    "ascii-tree": "^0.3.0",
+    "cli-table": "^0.3.11",
+    "colors": "^1.4.0",
+    "commander": "8.3.0",
+    "filesize": "^8.0.7",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "vite": "^2.8.1",
+    "vitest": "^0.3.4"
+  }
+}
