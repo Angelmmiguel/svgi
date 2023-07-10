@@ -1,0 +1,3 @@
+packages:
+  # Use all packages in packages/*
+  - packages/**
